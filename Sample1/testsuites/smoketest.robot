@@ -26,7 +26,8 @@ ${landing_page_login_link_Selector}     css=#meta-2 > ul:nth-child(2) > li:nth-c
 Open Browser to Landing Page
     [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
     open browser    ${SERVER}     ${BROWSER}
-    maximize browser window
+    # maximize browser window
+    # maximize causes issues in headless browser scenario - see https://github.com/angular/protractor/issues/4407 and
     set selenium speed  ${DELAY}
     wait until page contains element    ${SELECTOR}
 
