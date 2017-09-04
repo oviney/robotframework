@@ -21,5 +21,10 @@ pip install robotframework-requests
 # Useful hints
 Git cheatsheet - https://www.git-tower.com/blog/git-cheat-sheet/
 
-# Annoying parts
-Robot Framework prerequisite execution environment.  Need to setup a Jenkin's slave with the required Python, RobotFramework and additional RobotFramework libraries.   I will cover this in another tutorial.
+# Annoying parts - TODO
+* Robot Framework prerequisite execution environment.
+** Need to setup a Jenkin's slave with the required software:
+*** Python
+*** RobotFramework
+*** Additional RobotFramework libraries (SUDS, Selenium2Library etc.)
+* I will cover this in another tutorial.
