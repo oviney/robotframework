@@ -28,3 +28,5 @@ Git cheatsheet - https://www.git-tower.com/blog/git-cheat-sheet/
 *** RobotFramework
 *** Additional RobotFramework libraries (SUDS, Selenium2Library etc.)
 * I will cover this in another tutorial.
+* Fix issues with Jenkin's not displaying RF reports
+** inject the following -Dhudson.model.DirectoryBrowserSupport.CSP= into /etc/default/jenkins, then 'service jenkins restart' to apply
