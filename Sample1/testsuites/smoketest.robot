@@ -27,7 +27,7 @@ Open Browser to Landing Page
     [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
     open browser    ${SERVER}     ${BROWSER}
     # maximize browser window
-    # maximize causes issues in headless browser scenario - see https://github.com/angular/protractor/issues/4407 and
+    # maximize causes issues in headless browser scenario - see https://github.com/angular/protractor/issues/4407.
     set selenium speed  ${DELAY}
     wait until page contains element    ${SELECTOR}
 

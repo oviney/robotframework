@@ -30,3 +30,4 @@ Git cheatsheet - https://www.git-tower.com/blog/git-cheat-sheet/
 * I will cover this in another tutorial.
 * Fix issues with Jenkin's not displaying RF reports
 ** inject the following -Dhudson.model.DirectoryBrowserSupport.CSP= into /etc/default/jenkins, then 'service jenkins restart' to apply
+** https://www.blazemeter.com/blog/headless-execution-selenium-tests-jenkins - great info on issues when using headless chromedriver on Linux system.
