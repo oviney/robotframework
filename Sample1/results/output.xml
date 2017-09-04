@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170904 14:47:11.817" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
-<suite source="/home/oviney/PycharmProjects/RobotFramework2/testsuites/smoketest.robot" id="s1" name="Smoketest">
+<robot generated="20170904 15:20:01.076" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/home/oviney/robotframework/Sample1/testsuites/smoketest.robot" id="s1" name="Smoketest">
 <test id="s1-t1" name="Login to Blog via Web">
 <kw name="Given Open Browser to Landing Page">
 <kw name="Open Browser" library="Selenium2Library">
@@ -9,28 +9,28 @@
 <arg>${SERVER}</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20170904 14:47:11.955" level="INFO">Opening browser 'Chrome' to base url 'https://www.viney.ca'</msg>
-<status status="PASS" endtime="20170904 14:47:17.450" starttime="20170904 14:47:11.954"></status>
+<msg timestamp="20170904 15:20:01.255" level="INFO">Opening browser 'Chrome' to base url 'https://www.viney.ca'</msg>
+<status status="PASS" endtime="20170904 15:20:08.355" starttime="20170904 15:20:01.253"></status>
 </kw>
 <kw name="Maximize Browser Window" library="Selenium2Library">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20170904 14:47:17.595" starttime="20170904 14:47:17.451"></status>
+<status status="PASS" endtime="20170904 15:20:08.516" starttime="20170904 15:20:08.355"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:17.596" starttime="20170904 14:47:17.595"></status>
+<status status="PASS" endtime="20170904 15:20:08.517" starttime="20170904 15:20:08.516"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${landing_page_login_link_Selector}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:17.621" starttime="20170904 14:47:17.596"></status>
+<status status="PASS" endtime="20170904 15:20:08.541" starttime="20170904 15:20:08.517"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:17.621" starttime="20170904 14:47:11.954"></status>
+<status status="PASS" endtime="20170904 15:20:08.541" starttime="20170904 15:20:01.252"></status>
 </kw>
 <kw name="When Click on Login Link">
 <kw name="Click Element" library="Selenium2Library">
@@ -38,32 +38,32 @@
 <arguments>
 <arg>${landing_page_login_link_Selector}</arg>
 </arguments>
-<msg timestamp="20170904 14:47:17.622" level="INFO">Clicking element 'css=#meta-2 &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)'.</msg>
-<status status="PASS" endtime="20170904 14:47:19.419" starttime="20170904 14:47:17.622"></status>
+<msg timestamp="20170904 15:20:08.543" level="INFO">Clicking element 'css=#meta-2 &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)'.</msg>
+<status status="PASS" endtime="20170904 15:20:10.858" starttime="20170904 15:20:08.542"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:19.445" starttime="20170904 14:47:19.419"></status>
+<status status="PASS" endtime="20170904 15:20:10.877" starttime="20170904 15:20:10.859"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom</arg>
 </arguments>
-<msg timestamp="20170904 14:47:19.446" level="INFO">Clicking element 'css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom'.</msg>
-<status status="PASS" endtime="20170904 14:47:19.584" starttime="20170904 14:47:19.445"></status>
+<msg timestamp="20170904 15:20:10.878" level="INFO">Clicking element 'css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom'.</msg>
+<status status="PASS" endtime="20170904 15:20:10.965" starttime="20170904 15:20:10.877"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#user_login</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:19.620" starttime="20170904 14:47:19.584"></status>
+<status status="PASS" endtime="20170904 15:20:11.003" starttime="20170904 15:20:10.965"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:19.621" starttime="20170904 14:47:17.621"></status>
+<status status="PASS" endtime="20170904 15:20:11.003" starttime="20170904 15:20:08.542"></status>
 </kw>
 <kw name="And Input Username">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -71,7 +71,7 @@
 <arguments>
 <arg>css=#user_login</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:19.633" starttime="20170904 14:47:19.621"></status>
+<status status="PASS" endtime="20170904 15:20:11.015" starttime="20170904 15:20:11.004"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -79,10 +79,10 @@
 <arg>id=user_login</arg>
 <arg>spiderpig</arg>
 </arguments>
-<msg timestamp="20170904 14:47:19.634" level="INFO">Typing text 'spiderpig' into text field 'id=user_login'</msg>
-<status status="PASS" endtime="20170904 14:47:19.767" starttime="20170904 14:47:19.634"></status>
+<msg timestamp="20170904 15:20:11.015" level="INFO">Typing text 'spiderpig' into text field 'id=user_login'</msg>
+<status status="PASS" endtime="20170904 15:20:11.140" starttime="20170904 15:20:11.015"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:19.767" starttime="20170904 14:47:19.621"></status>
+<status status="PASS" endtime="20170904 15:20:11.140" starttime="20170904 15:20:11.004"></status>
 </kw>
 <kw name="And Input Password">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -90,7 +90,7 @@
 <arguments>
 <arg>css=#user_pass</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:19.789" starttime="20170904 14:47:19.768"></status>
+<status status="PASS" endtime="20170904 15:20:11.162" starttime="20170904 15:20:11.143"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -98,10 +98,10 @@
 <arg>id=user_pass</arg>
 <arg>Monalisa2016!@</arg>
 </arguments>
-<msg timestamp="20170904 14:47:19.789" level="INFO">Typing text 'Monalisa2016!@' into text field 'id=user_pass'</msg>
-<status status="PASS" endtime="20170904 14:47:19.936" starttime="20170904 14:47:19.789"></status>
+<msg timestamp="20170904 15:20:11.162" level="INFO">Typing text 'Monalisa2016!@' into text field 'id=user_pass'</msg>
+<status status="PASS" endtime="20170904 15:20:11.298" starttime="20170904 15:20:11.162"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:19.936" starttime="20170904 14:47:19.767"></status>
+<status status="PASS" endtime="20170904 15:20:11.298" starttime="20170904 15:20:11.142"></status>
 </kw>
 <kw name="Then Submit Login Form">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -109,40 +109,40 @@
 <arguments>
 <arg>css=#wp-submit</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:19.961" starttime="20170904 14:47:19.937"></status>
+<status status="PASS" endtime="20170904 15:20:11.319" starttime="20170904 15:20:11.299"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>id=wp-submit</arg>
 </arguments>
-<msg timestamp="20170904 14:47:19.962" level="INFO">Clicking element 'id=wp-submit'.</msg>
-<status status="PASS" endtime="20170904 14:47:24.545" starttime="20170904 14:47:19.961"></status>
+<msg timestamp="20170904 15:20:11.320" level="INFO">Clicking element 'id=wp-submit'.</msg>
+<status status="PASS" endtime="20170904 15:20:19.010" starttime="20170904 15:20:11.320"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#wp-admin-bar-my-account &gt; a &gt; span</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:24.568" starttime="20170904 14:47:24.545"></status>
+<status status="PASS" endtime="20170904 15:20:19.026" starttime="20170904 15:20:19.010"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>Howdy, oviney</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:24.589" starttime="20170904 14:47:24.568"></status>
+<status status="PASS" endtime="20170904 15:20:19.045" starttime="20170904 15:20:19.027"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170904 14:47:24.646" starttime="20170904 14:47:24.590"></status>
+<status status="PASS" endtime="20170904 15:20:19.101" starttime="20170904 15:20:19.046"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:24.646" starttime="20170904 14:47:19.937"></status>
+<status status="PASS" endtime="20170904 15:20:19.102" starttime="20170904 15:20:11.299"></status>
 </kw>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170904 14:47:24.647" critical="yes" starttime="20170904 14:47:11.953"></status>
+<status status="PASS" endtime="20170904 15:20:19.102" critical="yes" starttime="20170904 15:20:01.250"></status>
 </test>
 <test id="s1-t2" name="SOAP Webservice Operation">
 <kw name="Call Web Service with Operation">
@@ -151,7 +151,7 @@
 <arguments>
 <arg>${SOAP_WSDL_URL}</arg>
 </arguments>
-<msg timestamp="20170904 14:47:24.654" level="INFO">Using WSDL at http://www.webservicex.net/Statistics.asmx?WSDL
+<msg timestamp="20170904 15:20:19.109" level="INFO">Using WSDL at http://www.webservicex.net/Statistics.asmx?WSDL
 Suds ( https://fedorahosted.org/suds/ )  version: 0.4 GA  build: R699-20100913
 
 Service ( Statistics ) tns="http://www.webserviceX.NET"
@@ -170,7 +170,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
             ArrayOfDouble
 
 </msg>
-<status status="PASS" endtime="20170904 14:47:24.657" starttime="20170904 14:47:24.648"></status>
+<status status="PASS" endtime="20170904 15:20:19.111" starttime="20170904 15:20:19.104"></status>
 </kw>
 <kw name="Create Wsdl Object" library="SudsLibrary">
 <doc>Creates a WSDL object of the specified `type`.</doc>
@@ -180,10 +180,10 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${dbl array}</var>
 </assign>
-<msg timestamp="20170904 14:47:24.658" level="INFO">${dbl array} = (ArrayOfDouble){
+<msg timestamp="20170904 15:20:19.111" level="INFO">${dbl array} = (ArrayOfDouble){
    double[] = &lt;empty&gt;
  }</msg>
-<status status="PASS" endtime="20170904 14:47:24.658" starttime="20170904 14:47:24.657"></status>
+<status status="PASS" endtime="20170904 15:20:19.111" starttime="20170904 15:20:19.111"></status>
 </kw>
 <kw name="Append To List" library="Collections">
 <doc>Adds ``values`` to the end of ``list``.</doc>
@@ -191,7 +191,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${dbl array.double}</arg>
 <arg>2.0</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:24.658" starttime="20170904 14:47:24.658"></status>
+<status status="PASS" endtime="20170904 15:20:19.112" starttime="20170904 15:20:19.112"></status>
 </kw>
 <kw name="Append To List" library="Collections">
 <doc>Adds ``values`` to the end of ``list``.</doc>
@@ -199,7 +199,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${dbl array.double}</arg>
 <arg>3.0</arg>
 </arguments>
-<status status="PASS" endtime="20170904 14:47:24.659" starttime="20170904 14:47:24.658"></status>
+<status status="PASS" endtime="20170904 15:20:19.113" starttime="20170904 15:20:19.112"></status>
 </kw>
 <kw name="Call Soap Method" library="SudsLibrary">
 <doc>Calls the SOAP method with the given `name` and `args`.</doc>
@@ -210,7 +210,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20170904 14:47:24.661" level="INFO">Sending:
+<msg timestamp="20170904 15:20:19.115" level="INFO">Sending:
 &lt;?xml version="1.0" ?&gt;
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.webserviceX.NET" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;SOAP-ENV:Header/&gt;
@@ -224,7 +224,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
   &lt;/ns0:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
 </msg>
-<msg timestamp="20170904 14:47:25.061" level="INFO">Received:
+<msg timestamp="20170904 15:20:19.534" level="INFO">Received:
 &lt;?xml version="1.0" ?&gt;
 &lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;soap:Body&gt;
@@ -238,14 +238,14 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
   &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </msg>
-<msg timestamp="20170904 14:47:25.063" level="INFO">${result} = (reply){
+<msg timestamp="20170904 15:20:19.536" level="INFO">${result} = (reply){
    Sums = 5.0
    Average = 2.5
    StandardDeviation = 0.5
    skewness = 0.5
    Kurtosis = -2.5
  }</msg>
-<status status="PASS" endtime="20170904 14:47:25.063" starttime="20170904 14:47:24.659"></status>
+<status status="PASS" endtime="20170904 15:20:19.536" starttime="20170904 15:20:19.113"></status>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
@@ -253,14 +253,14 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${result.Average}</arg>
 <arg>2.5</arg>
 </arguments>
-<msg timestamp="20170904 14:47:25.064" level="INFO">Argument types are:
+<msg timestamp="20170904 15:20:19.537" level="INFO">Argument types are:
 &lt;type 'float'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 14:47:25.064" starttime="20170904 14:47:25.063"></status>
+<status status="PASS" endtime="20170904 15:20:19.537" starttime="20170904 15:20:19.537"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:25.064" starttime="20170904 14:47:24.648"></status>
+<status status="PASS" endtime="20170904 15:20:19.537" starttime="20170904 15:20:19.104"></status>
 </kw>
-<status status="PASS" endtime="20170904 14:47:25.064" critical="yes" starttime="20170904 14:47:24.647"></status>
+<status status="PASS" endtime="20170904 15:20:19.537" critical="yes" starttime="20170904 15:20:19.103"></status>
 </test>
 <test id="s1-t3" name="REST Service Operation">
 <kw name="Create Session" library="RequestsLibrary">
@@ -269,8 +269,8 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>test</arg>
 <arg>http://jsonplaceholder.typicode.com</arg>
 </arguments>
-<msg timestamp="20170904 14:47:25.065" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20170904 14:47:25.066" starttime="20170904 14:47:25.065"></status>
+<msg timestamp="20170904 15:20:19.538" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170904 15:20:19.539" starttime="20170904 15:20:19.538"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -281,17 +281,17 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20170904 14:47:25.387" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
-<msg timestamp="20170904 14:47:25.387" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20170904 14:47:25.387" starttime="20170904 14:47:25.066"></status>
+<msg timestamp="20170904 15:20:19.817" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
+<msg timestamp="20170904 15:20:19.818" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20170904 15:20:19.818" starttime="20170904 15:20:19.539"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20170904 14:47:25.387" level="INFO">200</msg>
-<status status="PASS" endtime="20170904 14:47:25.388" starttime="20170904 14:47:25.387"></status>
+<msg timestamp="20170904 15:20:19.818" level="INFO">200</msg>
+<status status="PASS" endtime="20170904 15:20:19.818" starttime="20170904 15:20:19.818"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -299,29 +299,29 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20170904 14:47:25.388" level="INFO">Argument types are:
+<msg timestamp="20170904 15:20:19.819" level="INFO">Argument types are:
 &lt;type 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 14:47:25.388" starttime="20170904 14:47:25.388"></status>
+<status status="PASS" endtime="20170904 15:20:19.819" starttime="20170904 15:20:19.819"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20170904 14:47:25.389" level="INFO">{
+<msg timestamp="20170904 15:20:19.819" level="INFO">{
   "userId": 1,
   "id": 1,
   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 }</msg>
-<status status="PASS" endtime="20170904 14:47:25.389" starttime="20170904 14:47:25.388"></status>
+<status status="PASS" endtime="20170904 15:20:19.819" starttime="20170904 15:20:19.819"></status>
 </kw>
 <doc>Get the response from API</doc>
-<status status="PASS" endtime="20170904 14:47:25.389" critical="yes" starttime="20170904 14:47:25.065"></status>
+<status status="PASS" endtime="20170904 15:20:19.820" critical="yes" starttime="20170904 15:20:19.538"></status>
 </test>
 <doc>This suite tests my blog for basic functionality.</doc>
-<status status="PASS" endtime="20170904 14:47:25.390" starttime="20170904 14:47:11.818"></status>
+<status status="PASS" endtime="20170904 15:20:19.820" starttime="20170904 15:20:01.077"></status>
 </suite>
 <statistics>
 <total>

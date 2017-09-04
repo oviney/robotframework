@@ -12,6 +12,8 @@ Library     RequestsLibrary
 
 *** Variables ***
 ${SERVER}               https://www.viney.ca
+${USERNAME}             spiderpig
+${PASSWORD}             Monalisa2016!@
 ${BROWSER}              Chrome
 ${DELAY}                0
 ${EXECDIR}              /home/oviney/PycharmProjects/RobotFramework2/drivers/
@@ -35,11 +37,11 @@ Click on Login Link
 
 Input Username
     wait until page contains element  css=#user_login
-    input text  id=user_login   spiderpig
+    input text  id=user_login   ${USERNAME}
 
 Input Password
     wait until page contains element  css=#user_pass
-    input text  id=user_pass   Monalisa2016!@
+    input text  id=user_pass   ${PASSWORD}
 
 Submit Login Form
     wait until page contains element  css=#wp-submit
