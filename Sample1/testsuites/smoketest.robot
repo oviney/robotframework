@@ -11,7 +11,7 @@ Library     Collections
 Library     RequestsLibrary
 
 *** Variables ***
-${SERVER}               https://www.viney.ca
+${SERVER}               https://www.google.ca
 ${USERNAME}
 ${PASSWORD}
 ${BROWSER}              Chrome
