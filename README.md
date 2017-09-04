@@ -10,3 +10,6 @@ step is validated by using a "wait..." keyword.  There are some basic examples o
 The SOAP sample test shows you how to use the SudsLibrary to communicate with a SOAP webservice.  This sample project uses an external, public facing and available SOAP webservice.
 
 The REST sample test shows you how to use the RequestsLibrary, Collections and HTTPLibrary (https://github.com/peritus/robotframework-httplibrary) to communicate with a REST service.  The sample project uses an external, public facing and available REST webservice.
+
+# Useful hints
+Git cheatsheet - https://www.git-tower.com/blog/git-cheat-sheet/
