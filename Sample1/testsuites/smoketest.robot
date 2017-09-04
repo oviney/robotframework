@@ -12,8 +12,8 @@ Library     RequestsLibrary
 
 *** Variables ***
 ${SERVER}               https://www.viney.ca
-${USERNAME}             spiderpig
-${PASSWORD}             Monalisa2016!@
+${USERNAME}
+${PASSWORD}
 ${BROWSER}              Chrome
 ${DELAY}                0
 ${EXECDIR}              /home/oviney/PycharmProjects/RobotFramework2/drivers/
@@ -24,10 +24,11 @@ ${landing_page_login_link_Selector}     css=#meta-2 > ul:nth-child(2) > li:nth-c
 
 *** Keywords ***
 Open Browser to Landing Page
+    [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
     open browser    ${SERVER}     ${BROWSER}
     maximize browser window
     set selenium speed  ${DELAY}
-    wait until page contains element    ${landing_page_login_link_Selector}
+    wait until page contains element    ${SELECTOR}
 
 Click on Login Link
     click element  ${landing_page_login_link_Selector}
@@ -63,13 +64,16 @@ Call Web Service with Operation
 #    driver = webdriver.Chrome('/path/to/chromedriver')  # Optional argument, if not specified will search path.
 
 *** Test Cases ***
-Login to Blog via Web
-    [Tags]    Smoke
-    Given Open Browser to Landing Page
-    When Click on Login Link
-    And Input Username
-    And Input Password
-    Then Submit Login Form
+#Login to Blog via Web
+#    [Tags]    Smoke
+#    Given Open Browser to Landing Page
+#    When Click on Login Link
+#    And Input Username
+#    And Input Password
+#    Then Submit Login Form
+
+Open Google
+    Open Browser to Landing Page    https://www.google.ca   Chrome  css=#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)
 
 SOAP Webservice Operation
     Call Web Service with Operation
