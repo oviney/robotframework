@@ -14,12 +14,6 @@ ${landing_page_login_link_Selector}     css=#meta-2 > ul:nth-child(2) > li:nth-c
 ${landing_page_verification_Selector}   css=#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)
 
 *** Keywords ***
-Open Browser to Landing Page
-    [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
-    Start Browser   ${SERVER}   ${BROWSER}
-    set selenium speed  ${DELAY}
-    wait until page contains element    ${SELECTOR}
-
 Click on Login Link
     click element  ${landing_page_login_link_Selector}
     wait until page contains element  css=#jetpack-sso-wrap > a.jetpack-sso-toggle.wpcom

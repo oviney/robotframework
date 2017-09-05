@@ -9,13 +9,6 @@ Resource  ../resources/common.robot
 ${landing_page_verification_Selector}   css=#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)
 ${SERVER}               https://www.google.ca
 
-*** Keywords ***
-Open Browser to Landing Page
-    [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
-    Start Browser   ${SERVER}   ${BROWSER}
-    set selenium speed  ${DELAY}
-    wait until page contains element    ${SELECTOR}
-
 *** Test Cases ***
 Open Google
     [Tags]  Smoke
