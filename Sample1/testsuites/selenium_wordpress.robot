@@ -5,13 +5,9 @@ Library  Selenium2Library
 Resource  ../resources/common.robot
 
 *** Variables ***
-${SERVER}               https://www.google.ca
+${SERVER}               http://www.viney.ca
 ${USERNAME}             testuser1
 ${PASSWORD}             H6ZZsfwVT41M9Q8$6NcaMi4i
-${BROWSER}              chrome
-${DELAY}                0
-${HUB_URL}              http://192.168.86.83:4444/wd/hub
-${SELECTOR}
 
 # css selectors
 ${landing_page_login_link_Selector}     css=#meta-2 > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)
@@ -21,9 +17,6 @@ ${landing_page_verification_Selector}   css=#tsf > div.tsf-p > div.jsb > center 
 Open Browser to Landing Page
     [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
     Start Browser   ${SERVER}   ${BROWSER}
-    #open browser    ${SERVER}     ${BROWSER}
-    # maximize browser window
-    # maximize causes issues in headless browser scenario - see https://github.com/angular/protractor/issues/4407.
     set selenium speed  ${DELAY}
     wait until page contains element    ${SELECTOR}
 
@@ -51,18 +44,9 @@ Submit Login Form
 *** Test Cases ***
 Login to Blog via Web
     [Tags]    Smoke
-    Given Open Browser to Landing Page  http://www.viney.ca    ${BROWSER}  ${landing_page_login_link_Selector}
+    Given Open Browser to Landing Page   ${SERVER}   ${BROWSER}  ${landing_page_login_link_Selector}
     When Click on Login Link
     And Input Username
     And Input Password
     Then Submit Login Form  Howdy, test user
-    [Teardown]  close browser
-
-Open Google
-    [Tags]  Smoke
-    Open Browser to Landing Page    http://www.google.ca   ${BROWSER}  ${landing_page_verification_Selector}
-    input text  id=lst-ib  robotframework
-    press key  id=lst-ib    \\13
-    ${result}   get text  id=resultStats
-    log     ${result}
     [Teardown]  close browser

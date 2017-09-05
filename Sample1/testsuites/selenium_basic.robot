@@ -5,14 +5,9 @@ Library  Selenium2Library
 Resource  ../resources/common.robot
 
 *** Variables ***
-${SERVER}               https://www.google.ca
-${BROWSER}              chrome
-${DELAY}                0
-${HUB_URL}              http://192.168.86.83:4444/wd/hub
-${SELECTOR}
-
 # css selectors
 ${landing_page_verification_Selector}   css=#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)
+${SERVER}               https://www.google.ca
 
 *** Keywords ***
 Open Browser to Landing Page
