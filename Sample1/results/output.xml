@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170904 21:05:15.546" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
-<suite source="/home/oviney/robotframework/Sample1/testsuites/smoketest.robot" id="s1" name="Smoketest">
-<test id="s1-t1" name="Login to Blog via Web">
+<robot generated="20170904 22:12:08.960" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
+<suite source="/home/oviney/robotframework/Sample1/testsuites" id="s1" name="Testsuites">
+<suite source="/home/oviney/robotframework/Sample1/testsuites/rest.robot" id="s1-s1" name="Rest">
+<test id="s1-s1-t1" name="REST Service Operation">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>test</arg>
+<arg>${REST_API_URL}</arg>
+</arguments>
+<msg timestamp="20170904 22:12:09.047" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170904 22:12:09.048" starttime="20170904 22:12:09.047"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the</doc>
+<arguments>
+<arg>test</arg>
+<arg>/posts/1</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20170904 22:12:10.229" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
+<msg timestamp="20170904 22:12:10.229" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20170904 22:12:10.229" starttime="20170904 22:12:09.048"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<msg timestamp="20170904 22:12:10.230" level="INFO">200</msg>
+<status status="PASS" endtime="20170904 22:12:10.230" starttime="20170904 22:12:10.229"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20170904 22:12:10.230" level="INFO">Argument types are:
+&lt;type 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" endtime="20170904 22:12:10.230" starttime="20170904 22:12:10.230"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${response.text}</arg>
+</arguments>
+<msg timestamp="20170904 22:12:10.231" level="INFO">{
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+}</msg>
+<status status="PASS" endtime="20170904 22:12:10.231" starttime="20170904 22:12:10.231"></status>
+</kw>
+<doc>Get the response from API</doc>
+<status status="PASS" endtime="20170904 22:12:10.231" critical="yes" starttime="20170904 22:12:09.047"></status>
+</test>
+<doc>This suite tests my blog for basic functionality.</doc>
+<status status="PASS" endtime="20170904 22:12:10.232" starttime="20170904 22:12:08.986"></status>
+</suite>
+<suite source="/home/oviney/robotframework/Sample1/testsuites/selenium.robot" id="s1-s2" name="Selenium">
+<test id="s1-s2-t1" name="Login to Blog via Web">
 <kw name="Given Open Browser to Landing Page">
 <arguments>
 <arg>http://www.viney.ca</arg>
 <arg>${BROWSER}</arg>
 <arg>${landing_page_login_link_Selector}</arg>
 </arguments>
-<kw name="Start Browser">
+<kw name="Start Browser" library="common">
 <doc>Start firefox browser on Selenium Grid</doc>
 <arguments>
 <arg>${SERVER}</arg>
@@ -22,26 +85,26 @@
 <arg>None</arg>
 <arg>${HUB_URL}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:15.689" level="INFO">Opening browser 'chrome' to base url 'http://www.viney.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
-<status status="PASS" endtime="20170904 21:05:18.423" starttime="20170904 21:05:15.689"></status>
+<msg timestamp="20170904 22:12:10.290" level="INFO">Opening browser 'chrome' to base url 'http://www.viney.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170904 22:12:13.351" starttime="20170904 22:12:10.290"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:18.423" starttime="20170904 21:05:15.688"></status>
+<status status="PASS" endtime="20170904 22:12:13.352" starttime="20170904 22:12:10.289"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:18.424" starttime="20170904 21:05:18.423"></status>
+<status status="PASS" endtime="20170904 22:12:13.352" starttime="20170904 22:12:13.352"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${SELECTOR}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:18.469" starttime="20170904 21:05:18.424"></status>
+<status status="PASS" endtime="20170904 22:12:13.394" starttime="20170904 22:12:13.352"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:18.470" starttime="20170904 21:05:15.688"></status>
+<status status="PASS" endtime="20170904 22:12:13.395" starttime="20170904 22:12:10.289"></status>
 </kw>
 <kw name="When Click on Login Link">
 <kw name="Click Element" library="Selenium2Library">
@@ -49,32 +112,32 @@
 <arguments>
 <arg>${landing_page_login_link_Selector}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:18.471" level="INFO">Clicking element 'css=#meta-2 &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)'.</msg>
-<status status="PASS" endtime="20170904 21:05:18.605" starttime="20170904 21:05:18.470"></status>
+<msg timestamp="20170904 22:12:13.395" level="INFO">Clicking element 'css=#meta-2 &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)'.</msg>
+<status status="PASS" endtime="20170904 22:12:14.767" starttime="20170904 22:12:13.395"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:19.772" starttime="20170904 21:05:18.605"></status>
+<status status="PASS" endtime="20170904 22:12:14.812" starttime="20170904 22:12:14.768"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom</arg>
 </arguments>
-<msg timestamp="20170904 21:05:19.772" level="INFO">Clicking element 'css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom'.</msg>
-<status status="PASS" endtime="20170904 21:05:19.939" starttime="20170904 21:05:19.772"></status>
+<msg timestamp="20170904 22:12:14.813" level="INFO">Clicking element 'css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom'.</msg>
+<status status="PASS" endtime="20170904 22:12:14.956" starttime="20170904 22:12:14.813"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#user_login</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:19.996" starttime="20170904 21:05:19.940"></status>
+<status status="PASS" endtime="20170904 22:12:15.004" starttime="20170904 22:12:14.956"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:19.996" starttime="20170904 21:05:18.470"></status>
+<status status="PASS" endtime="20170904 22:12:15.004" starttime="20170904 22:12:13.395"></status>
 </kw>
 <kw name="And Input Username">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -82,7 +145,7 @@
 <arguments>
 <arg>css=#user_login</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:20.028" starttime="20170904 21:05:19.997"></status>
+<status status="PASS" endtime="20170904 22:12:15.053" starttime="20170904 22:12:15.005"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -90,10 +153,10 @@
 <arg>id=user_login</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:20.029" level="INFO">Typing text 'testuser1' into text field 'id=user_login'</msg>
-<status status="PASS" endtime="20170904 21:05:20.287" starttime="20170904 21:05:20.029"></status>
+<msg timestamp="20170904 22:12:15.053" level="INFO">Typing text 'testuser1' into text field 'id=user_login'</msg>
+<status status="PASS" endtime="20170904 22:12:15.276" starttime="20170904 22:12:15.053"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:20.288" starttime="20170904 21:05:19.997"></status>
+<status status="PASS" endtime="20170904 22:12:15.276" starttime="20170904 22:12:15.005"></status>
 </kw>
 <kw name="And Input Password">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -101,7 +164,7 @@
 <arguments>
 <arg>css=#user_pass</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:20.331" starttime="20170904 21:05:20.288"></status>
+<status status="PASS" endtime="20170904 22:12:15.324" starttime="20170904 22:12:15.276"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -109,10 +172,10 @@
 <arg>id=user_pass</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:20.332" level="INFO">Typing text 'H6ZZsfwVT41M9Q8$6NcaMi4i' into text field 'id=user_pass'</msg>
-<status status="PASS" endtime="20170904 21:05:20.616" starttime="20170904 21:05:20.331"></status>
+<msg timestamp="20170904 22:12:15.325" level="INFO">Typing text 'H6ZZsfwVT41M9Q8$6NcaMi4i' into text field 'id=user_pass'</msg>
+<status status="PASS" endtime="20170904 22:12:16.011" starttime="20170904 22:12:15.324"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:20.616" starttime="20170904 21:05:20.288"></status>
+<status status="PASS" endtime="20170904 22:12:16.011" starttime="20170904 22:12:15.276"></status>
 </kw>
 <kw name="Then Submit Login Form">
 <arguments>
@@ -123,49 +186,49 @@
 <arguments>
 <arg>css=#wp-submit</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:20.675" starttime="20170904 21:05:20.617"></status>
+<status status="PASS" endtime="20170904 22:12:16.053" starttime="20170904 22:12:16.012"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>id=wp-submit</arg>
 </arguments>
-<msg timestamp="20170904 21:05:20.676" level="INFO">Clicking element 'id=wp-submit'.</msg>
-<status status="PASS" endtime="20170904 21:05:24.230" starttime="20170904 21:05:20.675"></status>
+<msg timestamp="20170904 22:12:16.053" level="INFO">Clicking element 'id=wp-submit'.</msg>
+<status status="PASS" endtime="20170904 22:12:19.732" starttime="20170904 22:12:16.053"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#wp-admin-bar-my-account &gt; a &gt; span</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:24.331" starttime="20170904 21:05:24.230"></status>
+<status status="PASS" endtime="20170904 22:12:19.775" starttime="20170904 22:12:19.732"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>${verify_page_text}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:24.386" starttime="20170904 21:05:24.332"></status>
+<status status="PASS" endtime="20170904 22:12:19.819" starttime="20170904 22:12:19.775"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:24.387" starttime="20170904 21:05:20.617"></status>
+<status status="PASS" endtime="20170904 22:12:19.819" starttime="20170904 22:12:16.012"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170904 21:05:24.682" starttime="20170904 21:05:24.387"></status>
+<status status="PASS" endtime="20170904 22:12:20.307" starttime="20170904 22:12:19.819"></status>
 </kw>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170904 21:05:24.682" critical="yes" starttime="20170904 21:05:15.687"></status>
+<status status="PASS" endtime="20170904 22:12:20.307" critical="yes" starttime="20170904 22:12:10.288"></status>
 </test>
-<test id="s1-t2" name="Open Google">
+<test id="s1-s2-t2" name="Open Google">
 <kw name="Open Browser to Landing Page">
 <arguments>
 <arg>http://www.google.ca</arg>
 <arg>${BROWSER}</arg>
 <arg>${landing_page_verification_Selector}</arg>
 </arguments>
-<kw name="Start Browser">
+<kw name="Start Browser" library="common">
 <doc>Start firefox browser on Selenium Grid</doc>
 <arguments>
 <arg>${SERVER}</arg>
@@ -179,41 +242,175 @@
 <arg>None</arg>
 <arg>${HUB_URL}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:24.685" level="INFO">Opening browser 'chrome' to base url 'http://www.google.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
-<status status="PASS" endtime="20170904 21:05:26.901" starttime="20170904 21:05:24.685"></status>
+<msg timestamp="20170904 22:12:20.310" level="INFO">Opening browser 'chrome' to base url 'http://www.google.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170904 22:12:22.315" starttime="20170904 22:12:20.309"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:26.902" starttime="20170904 21:05:24.685"></status>
+<status status="PASS" endtime="20170904 22:12:22.315" starttime="20170904 22:12:20.309"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:26.902" starttime="20170904 21:05:26.902"></status>
+<status status="PASS" endtime="20170904 22:12:22.316" starttime="20170904 22:12:22.315"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${SELECTOR}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:26.949" starttime="20170904 21:05:26.902"></status>
+<status status="PASS" endtime="20170904 22:12:22.367" starttime="20170904 22:12:22.316"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:26.950" starttime="20170904 21:05:24.684"></status>
+<status status="PASS" endtime="20170904 22:12:22.368" starttime="20170904 22:12:20.308"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=lst-ib</arg>
+<arg>robotframework</arg>
+</arguments>
+<msg timestamp="20170904 22:12:22.368" level="INFO">Typing text 'robotframework' into text field 'id=lst-ib'</msg>
+<status status="PASS" endtime="20170904 22:12:22.691" starttime="20170904 22:12:22.368"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>id=lst-ib</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20170904 22:12:23.902" starttime="20170904 22:12:22.691"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=resultStats</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20170904 22:12:23.995" level="INFO">${result} = About 351,000 results (0.47 seconds) </msg>
+<status status="PASS" endtime="20170904 22:12:23.995" starttime="20170904 22:12:23.903"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20170904 22:12:23.995" level="INFO">About 351,000 results (0.47 seconds) </msg>
+<status status="PASS" endtime="20170904 22:12:23.995" starttime="20170904 22:12:23.995"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170904 21:05:27.043" starttime="20170904 21:05:26.950"></status>
+<status status="PASS" endtime="20170904 22:12:24.076" starttime="20170904 22:12:23.995"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:27.043" critical="yes" starttime="20170904 21:05:24.683"></status>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170904 22:12:24.077" critical="yes" starttime="20170904 22:12:20.308"></status>
 </test>
-<test id="s1-t3" name="SOAP Webservice Operation">
+<doc>This suite tests my blog for basic functionality.</doc>
+<status status="PASS" endtime="20170904 22:12:24.077" starttime="20170904 22:12:10.232"></status>
+</suite>
+<suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_basic.robot" id="s1-s3" name="Selenium Basic">
+<test id="s1-s3-t1" name="Open Google">
+<kw name="Open Browser to Landing Page">
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>${landing_page_verification_Selector}</arg>
+</arguments>
+<kw name="Start Browser" library="common">
+<doc>Start firefox browser on Selenium Grid</doc>
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>None</arg>
+<arg>${HUB_URL}</arg>
+</arguments>
+<msg timestamp="20170904 22:12:24.084" level="INFO">Opening browser 'chrome' to base url 'https://www.google.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170904 22:12:26.095" starttime="20170904 22:12:24.084"></status>
+</kw>
+<status status="PASS" endtime="20170904 22:12:26.095" starttime="20170904 22:12:24.083"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170904 22:12:26.096" starttime="20170904 22:12:26.095"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${SELECTOR}</arg>
+</arguments>
+<status status="PASS" endtime="20170904 22:12:26.143" starttime="20170904 22:12:26.096"></status>
+</kw>
+<status status="PASS" endtime="20170904 22:12:26.143" starttime="20170904 22:12:24.083"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=lst-ib</arg>
+<arg>robotframework</arg>
+</arguments>
+<msg timestamp="20170904 22:12:26.143" level="INFO">Typing text 'robotframework' into text field 'id=lst-ib'</msg>
+<status status="PASS" endtime="20170904 22:12:26.384" starttime="20170904 22:12:26.143"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>id=lst-ib</arg>
+<arg>\\13</arg>
+</arguments>
+<status status="PASS" endtime="20170904 22:12:27.479" starttime="20170904 22:12:26.385"></status>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<doc>Returns the text value of element identified by `locator`.</doc>
+<arguments>
+<arg>id=resultStats</arg>
+</arguments>
+<assign>
+<var>${result}</var>
+</assign>
+<msg timestamp="20170904 22:12:27.606" level="INFO">${result} = About 351,000 results (0.34 seconds) </msg>
+<status status="PASS" endtime="20170904 22:12:27.606" starttime="20170904 22:12:27.479"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${result}</arg>
+</arguments>
+<msg timestamp="20170904 22:12:27.607" level="INFO">About 351,000 results (0.34 seconds) </msg>
+<status status="PASS" endtime="20170904 22:12:27.607" starttime="20170904 22:12:27.606"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20170904 22:12:27.690" starttime="20170904 22:12:27.607"></status>
+</kw>
+<tags>
+<tag>Smoke</tag>
+</tags>
+<status status="PASS" endtime="20170904 22:12:27.690" critical="yes" starttime="20170904 22:12:24.082"></status>
+</test>
+<doc>This suite tests my blog for basic functionality.</doc>
+<status status="PASS" endtime="20170904 22:12:27.691" starttime="20170904 22:12:24.079"></status>
+</suite>
+<suite source="/home/oviney/robotframework/Sample1/testsuites/soap.robot" id="s1-s4" name="Soap">
+<test id="s1-s4-t1" name="SOAP Webservice Operation">
 <kw name="Call Web Service with Operation">
 <kw name="Create Soap Client" library="SudsLibrary">
 <doc>Loads a WSDL from the given URL/path and creates a Suds SOAP client.</doc>
 <arguments>
 <arg>${SOAP_WSDL_URL}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:27.050" level="INFO">Using WSDL at http://www.webservicex.net/Statistics.asmx?WSDL
+<msg timestamp="20170904 22:12:27.714" level="INFO">Using WSDL at http://www.webservicex.net/Statistics.asmx?WSDL
 Suds ( https://fedorahosted.org/suds/ )  version: 0.4 GA  build: R699-20100913
 
 Service ( Statistics ) tns="http://www.webserviceX.NET"
@@ -232,7 +429,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
             ArrayOfDouble
 
 </msg>
-<status status="PASS" endtime="20170904 21:05:27.051" starttime="20170904 21:05:27.046"></status>
+<status status="PASS" endtime="20170904 22:12:27.714" starttime="20170904 22:12:27.710"></status>
 </kw>
 <kw name="Create Wsdl Object" library="SudsLibrary">
 <doc>Creates a WSDL object of the specified `type`.</doc>
@@ -242,10 +439,10 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${dbl array}</var>
 </assign>
-<msg timestamp="20170904 21:05:27.052" level="INFO">${dbl array} = (ArrayOfDouble){
+<msg timestamp="20170904 22:12:27.715" level="INFO">${dbl array} = (ArrayOfDouble){
    double[] = &lt;empty&gt;
  }</msg>
-<status status="PASS" endtime="20170904 21:05:27.052" starttime="20170904 21:05:27.051"></status>
+<status status="PASS" endtime="20170904 22:12:27.715" starttime="20170904 22:12:27.714"></status>
 </kw>
 <kw name="Append To List" library="Collections">
 <doc>Adds ``values`` to the end of ``list``.</doc>
@@ -253,7 +450,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${dbl array.double}</arg>
 <arg>2.0</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:27.052" starttime="20170904 21:05:27.052"></status>
+<status status="PASS" endtime="20170904 22:12:27.715" starttime="20170904 22:12:27.715"></status>
 </kw>
 <kw name="Append To List" library="Collections">
 <doc>Adds ``values`` to the end of ``list``.</doc>
@@ -261,7 +458,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${dbl array.double}</arg>
 <arg>3.0</arg>
 </arguments>
-<status status="PASS" endtime="20170904 21:05:27.053" starttime="20170904 21:05:27.052"></status>
+<status status="PASS" endtime="20170904 22:12:27.716" starttime="20170904 22:12:27.716"></status>
 </kw>
 <kw name="Call Soap Method" library="SudsLibrary">
 <doc>Calls the SOAP method with the given `name` and `args`.</doc>
@@ -272,7 +469,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20170904 21:05:27.055" level="INFO">Sending:
+<msg timestamp="20170904 22:12:27.718" level="INFO">Sending:
 &lt;?xml version="1.0" ?&gt;
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.webserviceX.NET" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;SOAP-ENV:Header/&gt;
@@ -286,7 +483,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
   &lt;/ns0:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
 </msg>
-<msg timestamp="20170904 21:05:27.417" level="INFO">Received:
+<msg timestamp="20170904 22:12:28.577" level="INFO">Received:
 &lt;?xml version="1.0" ?&gt;
 &lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;soap:Body&gt;
@@ -300,14 +497,14 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
   &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </msg>
-<msg timestamp="20170904 21:05:27.419" level="INFO">${result} = (reply){
+<msg timestamp="20170904 22:12:28.579" level="INFO">${result} = (reply){
    Sums = 5.0
    Average = 2.5
    StandardDeviation = 0.5
    skewness = 0.5
    Kurtosis = -2.5
  }</msg>
-<status status="PASS" endtime="20170904 21:05:27.419" starttime="20170904 21:05:27.053"></status>
+<status status="PASS" endtime="20170904 22:12:28.579" starttime="20170904 22:12:27.716"></status>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
@@ -315,24 +512,24 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${result.Average}</arg>
 <arg>2.5</arg>
 </arguments>
-<msg timestamp="20170904 21:05:27.420" level="INFO">Argument types are:
+<msg timestamp="20170904 22:12:28.580" level="INFO">Argument types are:
 &lt;type 'float'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 21:05:27.420" starttime="20170904 21:05:27.420"></status>
+<status status="PASS" endtime="20170904 22:12:28.580" starttime="20170904 22:12:28.579"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:27.420" starttime="20170904 21:05:27.046"></status>
+<status status="PASS" endtime="20170904 22:12:28.580" starttime="20170904 22:12:27.709"></status>
 </kw>
-<status status="PASS" endtime="20170904 21:05:27.421" critical="yes" starttime="20170904 21:05:27.044"></status>
+<status status="PASS" endtime="20170904 22:12:28.580" critical="yes" starttime="20170904 22:12:27.709"></status>
 </test>
-<test id="s1-t4" name="REST Service Operation">
+<test id="s1-s4-t2" name="REST Service Operation">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>test</arg>
-<arg>http://jsonplaceholder.typicode.com</arg>
+<arg>${REST_API_URL}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:27.422" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20170904 21:05:27.422" starttime="20170904 21:05:27.422"></status>
+<msg timestamp="20170904 22:12:28.581" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170904 22:12:28.582" starttime="20170904 22:12:28.581"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -343,17 +540,17 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20170904 21:05:27.736" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
-<msg timestamp="20170904 21:05:27.736" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20170904 21:05:27.736" starttime="20170904 21:05:27.423"></status>
+<msg timestamp="20170904 22:12:28.893" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
+<msg timestamp="20170904 22:12:28.894" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20170904 22:12:28.894" starttime="20170904 22:12:28.582"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:27.736" level="INFO">200</msg>
-<status status="PASS" endtime="20170904 21:05:27.737" starttime="20170904 21:05:27.736"></status>
+<msg timestamp="20170904 22:12:28.894" level="INFO">200</msg>
+<status status="PASS" endtime="20170904 22:12:28.894" starttime="20170904 22:12:28.894"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -361,40 +558,46 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20170904 21:05:27.737" level="INFO">Argument types are:
+<msg timestamp="20170904 22:12:28.895" level="INFO">Argument types are:
 &lt;type 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 21:05:27.737" starttime="20170904 21:05:27.737"></status>
+<status status="PASS" endtime="20170904 22:12:28.895" starttime="20170904 22:12:28.894"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20170904 21:05:27.737" level="INFO">{
+<msg timestamp="20170904 22:12:28.895" level="INFO">{
   "userId": 1,
   "id": 1,
   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 }</msg>
-<status status="PASS" endtime="20170904 21:05:27.738" starttime="20170904 21:05:27.737"></status>
+<status status="PASS" endtime="20170904 22:12:28.895" starttime="20170904 22:12:28.895"></status>
 </kw>
 <doc>Get the response from API</doc>
-<status status="PASS" endtime="20170904 21:05:27.738" critical="yes" starttime="20170904 21:05:27.421"></status>
+<status status="PASS" endtime="20170904 22:12:28.895" critical="yes" starttime="20170904 22:12:28.580"></status>
 </test>
 <doc>This suite tests my blog for basic functionality.</doc>
-<status status="PASS" endtime="20170904 21:05:27.738" starttime="20170904 21:05:15.548"></status>
+<status status="PASS" endtime="20170904 22:12:28.896" starttime="20170904 22:12:27.692"></status>
+</suite>
+<status status="PASS" endtime="20170904 22:12:28.897" starttime="20170904 22:12:08.961"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="4">Critical Tests</stat>
-<stat fail="0" pass="4">All Tests</stat>
+<stat fail="0" pass="6">Critical Tests</stat>
+<stat fail="0" pass="6">All Tests</stat>
 </total>
 <tag>
-<stat fail="0" pass="1">Smoke</stat>
+<stat fail="0" pass="3">Smoke</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Smoketest" pass="4">Smoketest</stat>
+<stat fail="0" id="s1" name="Testsuites" pass="6">Testsuites</stat>
+<stat fail="0" id="s1-s1" name="Rest" pass="1">Testsuites.Rest</stat>
+<stat fail="0" id="s1-s2" name="Selenium" pass="2">Testsuites.Selenium</stat>
+<stat fail="0" id="s1-s3" name="Selenium Basic" pass="1">Testsuites.Selenium Basic</stat>
+<stat fail="0" id="s1-s4" name="Soap" pass="2">Testsuites.Soap</stat>
 </suite>
 </statistics>
 <errors>
