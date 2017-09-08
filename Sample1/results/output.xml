@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20170904 22:47:10.505" generator="Robot 3.0.2 (Python 2.7.12 on linux2)">
-<suite source="/home/oviney/robotframework/Sample1/testsuites" id="s1" name="Testsuites">
+<robot generated="20170908 12:14:42.473" generator="Rebot 3.0.2 (Python 2.7.12 on linux2)">
+<suite id="s1" name="Suites">
 <suite source="/home/oviney/robotframework/Sample1/testsuites/rest.robot" id="s1-s1" name="Rest">
 <test id="s1-s1-t1" name="REST Service Operation">
 <kw name="Create Session" library="RequestsLibrary">
@@ -9,8 +9,8 @@
 <arg>test</arg>
 <arg>${REST_API_URL}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:10.598" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20170904 22:47:10.598" starttime="20170904 22:47:10.597"></status>
+<msg timestamp="20170908 12:14:14.963" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170908 12:14:14.964" starttime="20170908 12:14:14.956"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -21,17 +21,17 @@
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20170904 22:47:10.954" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
-<msg timestamp="20170904 22:47:10.954" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20170904 22:47:10.954" starttime="20170904 22:47:10.599"></status>
+<msg timestamp="20170908 12:14:15.325" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
+<msg timestamp="20170908 12:14:15.326" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20170908 12:14:15.326" starttime="20170908 12:14:14.964"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:10.955" level="INFO">200</msg>
-<status status="PASS" endtime="20170904 22:47:10.955" starttime="20170904 22:47:10.955"></status>
+<msg timestamp="20170908 12:14:15.327" level="INFO">200</msg>
+<status status="PASS" endtime="20170908 12:14:15.328" starttime="20170908 12:14:15.326"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -39,29 +39,29 @@
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20170904 22:47:10.956" level="INFO">Argument types are:
+<msg timestamp="20170908 12:14:15.332" level="INFO">Argument types are:
 &lt;type 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 22:47:10.956" starttime="20170904 22:47:10.955"></status>
+<status status="PASS" endtime="20170908 12:14:15.332" starttime="20170908 12:14:15.332"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:10.956" level="INFO">{
+<msg timestamp="20170908 12:14:15.333" level="INFO">{
   "userId": 1,
   "id": 1,
   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 }</msg>
-<status status="PASS" endtime="20170904 22:47:10.956" starttime="20170904 22:47:10.956"></status>
+<status status="PASS" endtime="20170908 12:14:15.333" starttime="20170908 12:14:15.333"></status>
 </kw>
 <doc>Get the response from API</doc>
-<status status="PASS" endtime="20170904 22:47:10.957" critical="yes" starttime="20170904 22:47:10.595"></status>
+<status status="PASS" endtime="20170908 12:14:15.333" critical="yes" starttime="20170908 12:14:14.955"></status>
 </test>
 <doc>This suite tests my blog for basic functionality.</doc>
-<status status="PASS" endtime="20170904 22:47:10.957" starttime="20170904 22:47:10.523"></status>
+<status status="PASS" endtime="20170908 12:14:15.334" starttime="20170908 12:14:14.753"></status>
 </suite>
 <suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_basic.robot" id="s1-s2" name="Selenium Basic">
 <test id="s1-s2-t1" name="Open Google">
@@ -85,26 +85,26 @@
 <arg>None</arg>
 <arg>${HUB_URL}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:11.036" level="INFO">Opening browser 'chrome' to base url 'https://www.google.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
-<status status="PASS" endtime="20170904 22:47:13.970" starttime="20170904 22:47:11.036"></status>
+<msg timestamp="20170908 12:14:15.017" level="INFO">Opening browser 'chrome' to base url 'https://www.google.ca' through remote server at 'http://192.168.86.88:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170908 12:14:20.331" starttime="20170908 12:14:15.016"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:13.970" starttime="20170904 22:47:11.035"></status>
+<status status="PASS" endtime="20170908 12:14:20.331" starttime="20170908 12:14:15.014"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:13.971" starttime="20170904 22:47:13.970"></status>
+<status status="PASS" endtime="20170908 12:14:20.332" starttime="20170908 12:14:20.332"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${SELECTOR}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:14.058" starttime="20170904 22:47:13.971"></status>
+<status status="PASS" endtime="20170908 12:14:20.730" starttime="20170908 12:14:20.332"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:14.059" starttime="20170904 22:47:11.034"></status>
+<status status="PASS" endtime="20170908 12:14:20.731" starttime="20170908 12:14:15.013"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -112,8 +112,8 @@
 <arg>id=lst-ib</arg>
 <arg>robotframework</arg>
 </arguments>
-<msg timestamp="20170904 22:47:14.059" level="INFO">Typing text 'robotframework' into text field 'id=lst-ib'</msg>
-<status status="PASS" endtime="20170904 22:47:14.501" starttime="20170904 22:47:14.059"></status>
+<msg timestamp="20170908 12:14:20.731" level="INFO">Typing text 'robotframework' into text field 'id=lst-ib'</msg>
+<status status="PASS" endtime="20170908 12:14:22.565" starttime="20170908 12:14:20.731"></status>
 </kw>
 <kw name="Press Key" library="Selenium2Library">
 <doc>Simulates user pressing key on element identified by `locator`.</doc>
@@ -121,7 +121,7 @@
 <arg>id=lst-ib</arg>
 <arg>\\13</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:15.532" starttime="20170904 22:47:14.501"></status>
+<status status="PASS" endtime="20170908 12:14:26.921" starttime="20170908 12:14:22.565"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by `locator`.</doc>
@@ -131,30 +131,30 @@
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20170904 22:47:16.612" level="INFO">${result} = About 351,000 results (0.39 seconds) </msg>
-<status status="PASS" endtime="20170904 22:47:16.612" starttime="20170904 22:47:15.532"></status>
+<msg timestamp="20170908 12:14:27.453" level="INFO">${result} = About 351,000 results (0.84 seconds) </msg>
+<status status="PASS" endtime="20170908 12:14:27.453" starttime="20170908 12:14:26.922"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${result}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:16.613" level="INFO">About 351,000 results (0.39 seconds) </msg>
-<status status="PASS" endtime="20170904 22:47:16.613" starttime="20170904 22:47:16.612"></status>
+<msg timestamp="20170908 12:14:27.453" level="INFO">About 351,000 results (0.84 seconds) </msg>
+<status status="PASS" endtime="20170908 12:14:27.454" starttime="20170908 12:14:27.453"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170904 22:47:16.753" starttime="20170904 22:47:16.614"></status>
+<status status="PASS" endtime="20170908 12:14:27.583" starttime="20170908 12:14:27.454"></status>
 </kw>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170904 22:47:16.753" critical="yes" starttime="20170904 22:47:11.034"></status>
+<status status="PASS" endtime="20170908 12:14:27.583" critical="yes" starttime="20170908 12:14:15.012"></status>
 </test>
 <doc>This suite tests my blog for basic functionality.</doc>
-<status status="PASS" endtime="20170904 22:47:16.754" starttime="20170904 22:47:10.958"></status>
+<status status="PASS" endtime="20170908 12:14:27.585" starttime="20170908 12:14:14.833"></status>
 </suite>
-<suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_speedtest.robot" id="s1-s3" name="Selenium Speedtest">
+<suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_speedtest_no2.robot" id="s1-s3" name="Selenium Speedtest No2">
 <test id="s1-s3-t1" name="Check the speed of your broadband">
 <kw name="Open Browser to Landing Page" library="common">
 <arguments>
@@ -176,39 +176,168 @@
 <arg>None</arg>
 <arg>${HUB_URL}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:16.760" level="INFO">Opening browser 'chrome' to base url 'http://www.fast.com' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
-<status status="PASS" endtime="20170904 22:47:18.226" starttime="20170904 22:47:16.760"></status>
+<msg timestamp="20170908 12:14:14.970" level="INFO">Opening browser 'chrome' to base url 'http://www.fast.com' through remote server at 'http://192.168.86.88:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170908 12:14:20.563" starttime="20170908 12:14:14.970"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:18.227" starttime="20170904 22:47:16.759"></status>
+<status status="PASS" endtime="20170908 12:14:20.564" starttime="20170908 12:14:14.967"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:18.228" starttime="20170904 22:47:18.227"></status>
+<status status="PASS" endtime="20170908 12:14:20.564" starttime="20170908 12:14:20.564"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${SELECTOR}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:18.288" starttime="20170904 22:47:18.228"></status>
+<status status="PASS" endtime="20170908 12:14:20.958" starttime="20170908 12:14:20.566"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:18.288" starttime="20170904 22:47:16.759"></status>
+<status status="PASS" endtime="20170908 12:14:20.958" starttime="20170908 12:14:14.966"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>20</arg>
 </arguments>
-<msg timestamp="20170904 22:47:38.289" level="INFO">Slept 20 seconds</msg>
-<status status="PASS" endtime="20170904 22:47:38.289" starttime="20170904 22:47:18.288"></status>
+<msg timestamp="20170908 12:14:40.959" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170908 12:14:40.959" starttime="20170908 12:14:20.958"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=speed-progress-indicator-icon</arg>
+</arguments>
+<msg timestamp="20170908 12:14:40.960" level="INFO">Clicking element 'id=speed-progress-indicator-icon'.</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170908 12:14:42.284" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Suites.Selenium Speedtest No2-selenium-screenshot-1.png"&gt;&lt;img src="Suites.Selenium Speedtest No2-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170908 12:14:42.285" starttime="20170908 12:14:41.970"></status>
+</kw>
+<msg timestamp="20170908 12:14:42.287" level="FAIL">WebDriverException: Message: unknown error: Element &lt;span class="oc-icon oc-icon-pause speed-progress-indicator-icon" id="speed-progress-indicator-icon"&gt;...&lt;/span&gt; is not clickable at point (842, 460). Other element would receive the click: &lt;div class="spinner"&gt;...&lt;/div&gt;
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.32.498513 (2c63aa53b2c658de596ed550eb5267ec5967b351),platform=Linux 3.16.0-4-amd64 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 94 milliseconds
+Build info: version: '3.1.0', revision: '86a5d70', time: '2017-02-16 07:57:44 -0800'
+System info: host: 'jenkins', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.16.0-4-amd64', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498513 (2c63aa53b2c658de596ed550eb5267ec5967b351), userDataDir=/tmp/.org.chromium.Chromium.edOnF8}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 7598d84a48b441bbafaad9c2b533f927
+Screenshot: available via screen
+Stacktrace:
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance0 (NativeConstructorAccessorImpl.java:-2)
+    at sun.reflect.NativeConstructorAccessorImpl.newInstance (NativeConstructorAccessorImpl.java:62)
+    at sun.reflect.DelegatingConstructorAccessorImpl.newInstance (DelegatingConstructorAccessorImpl.java:45)
+    at java.lang.reflect.Constructor.newInstance (Constructor.java:423)
+    at org.openqa.selenium.remote.ErrorHandler.createThrowable (ErrorHandler.java:216)
+    at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed (ErrorHandler.java:168)
+    at org.openqa.selenium.remote.RemoteWebDriver.execute (RemoteWebDriver.java:635)
+    at org.openqa.selenium.remote.RemoteWebElement.execute (RemoteWebElement.java:274)
+    at org.openqa.selenium.remote.RemoteWebElement.click (RemoteWebElement.java:84)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement$1.invoke (EventFiringWebDriver.java:332)
+    at com.sun.proxy.$Proxy12.click (None:-1)
+    at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.click (EventFiringWebDriver.java:345)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0 (NativeMethodAccessorImpl.java:-2)
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.remote.server.KnownElements$1.invoke (KnownElements.java:64)
+    at com.sun.proxy.$Proxy13.click (None:-1)
+    at org.openqa.selenium.remote.server.handler.ClickElement.call (ClickElement.java:30)
+    at org.openqa.selenium.remote.server.handler.ClickElement.call (ClickElement.java:22)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:748)</msg>
+<status status="FAIL" endtime="20170908 12:14:42.287" starttime="20170908 12:14:40.959"></status>
+</kw>
+<status status="FAIL" endtime="20170908 12:14:42.288" critical="yes" starttime="20170908 12:14:14.965">WebDriverException: Message: unknown error: Element &lt;span class="oc-icon oc-icon-pause speed-progress-indicator-icon" id="speed-progress-indicator-icon"&gt;...&lt;/span&gt; is not clickable at point (842, 460). Other element would receive the click: &lt;div class="spinner"&gt;...&lt;/div&gt;
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.32.498513 (2c63aa53b2c658de596ed550eb5267ec5967b351),platform=Linux 3.16.0-4-amd64 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 94 milliseconds
+Build info: version: '3.1.0', revision: '86a5d70', time: '2017-02-16 07:57:44 -0800'
+System info: host: 'jenkins', ip: '127.0.1.1', os.name: 'Linux', os.arch: 'amd64', os.version: '3.16.0-4-amd64', java.version: '1.8.0_131'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.32.498513 (2c63aa53b2c658de596ed550eb5267ec5967b351), userDataDir=/tmp/.org.chromium.Chromium.edOnF8}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=60.0.3112.113, platform=LINUX, browserConnectionEnabled=false, nativeEvents=true, acc...
+    [ Message content over the limit has been removed. ]
+    at sun.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:498)
+    at org.openqa.selenium.remote.server.KnownElements$1.invoke (KnownElements.java:64)
+    at com.sun.proxy.$Proxy13.click (None:-1)
+    at org.openqa.selenium.remote.server.handler.ClickElement.call (ClickElement.java:30)
+    at org.openqa.selenium.remote.server.handler.ClickElement.call (ClickElement.java:22)
+    at java.util.concurrent.FutureTask.run (FutureTask.java:266)
+    at org.openqa.selenium.remote.server.DefaultSession$1.run (DefaultSession.java:176)
+    at java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1142)
+    at java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:617)
+    at java.lang.Thread.run (Thread.java:748)</status>
+</test>
+<doc>Speed test</doc>
+<status status="FAIL" endtime="20170908 12:14:42.289" starttime="20170908 12:14:14.788"></status>
+</suite>
+<suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_speedtest.robot" id="s1-s4" name="Selenium Speedtest">
+<test id="s1-s4-t1" name="Check the speed of your broadband">
+<kw name="Open Browser to Landing Page" library="common">
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>id=speed-value</arg>
+</arguments>
+<kw name="Start Browser" library="common">
+<doc>Start firefox browser on Selenium Grid</doc>
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${SERVER}</arg>
+<arg>${BROWSER}</arg>
+<arg>None</arg>
+<arg>${HUB_URL}</arg>
+</arguments>
+<msg timestamp="20170908 12:14:15.036" level="INFO">Opening browser 'chrome' to base url 'http://www.fast.com' through remote server at 'http://192.168.86.88:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170908 12:14:19.916" starttime="20170908 12:14:15.036"></status>
+</kw>
+<status status="PASS" endtime="20170908 12:14:19.916" starttime="20170908 12:14:15.033"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170908 12:14:19.917" starttime="20170908 12:14:19.916"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>${SELECTOR}</arg>
+</arguments>
+<status status="PASS" endtime="20170908 12:14:20.403" starttime="20170908 12:14:19.917"></status>
+</kw>
+<status status="PASS" endtime="20170908 12:14:20.403" starttime="20170908 12:14:15.032"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>20</arg>
+</arguments>
+<msg timestamp="20170908 12:14:40.404" level="INFO">Slept 20 seconds</msg>
+<status status="PASS" endtime="20170908 12:14:40.404" starttime="20170908 12:14:20.403"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="Selenium2Library">
 <doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170904 22:47:38.468" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" endtime="20170904 22:47:38.468" starttime="20170904 22:47:38.290"></status>
+<msg timestamp="20170908 12:14:40.758" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Suites.Selenium Speedtest-selenium-screenshot-1.png"&gt;&lt;img src="Suites.Selenium Speedtest-selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170908 12:14:40.758" starttime="20170908 12:14:40.405"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by `locator`.</doc>
@@ -218,8 +347,8 @@
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20170904 22:47:38.538" level="INFO">${result} = 16</msg>
-<status status="PASS" endtime="20170904 22:47:38.538" starttime="20170904 22:47:38.469"></status>
+<msg timestamp="20170908 12:14:40.861" level="INFO">${result} = 9.6</msg>
+<status status="PASS" endtime="20170908 12:14:40.861" starttime="20170908 12:14:40.758"></status>
 </kw>
 <kw name="Get Text" library="Selenium2Library">
 <doc>Returns the text value of element identified by `locator`.</doc>
@@ -229,49 +358,25 @@
 <assign>
 <var>${speed_units}</var>
 </assign>
-<msg timestamp="20170904 22:47:38.624" level="INFO">${speed_units} = Mbps</msg>
-<status status="PASS" endtime="20170904 22:47:38.624" starttime="20170904 22:47:38.539"></status>
+<msg timestamp="20170908 12:14:40.970" level="INFO">${speed_units} = Mbps</msg>
+<status status="PASS" endtime="20170908 12:14:40.970" starttime="20170908 12:14:40.861"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${result} ${speed_units}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:38.625" level="INFO">16 Mbps</msg>
-<status status="PASS" endtime="20170904 22:47:38.625" starttime="20170904 22:47:38.625"></status>
+<msg timestamp="20170908 12:14:40.971" level="INFO">9.6 Mbps</msg>
+<status status="PASS" endtime="20170908 12:14:40.971" starttime="20170908 12:14:40.971"></status>
 </kw>
 <kw name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170904 22:47:38.707" starttime="20170904 22:47:38.625"></status>
+<status status="PASS" endtime="20170908 12:14:41.068" starttime="20170908 12:14:40.971"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:38.707" critical="yes" starttime="20170904 22:47:16.758"></status>
+<status status="PASS" endtime="20170908 12:14:41.068" critical="yes" starttime="20170908 12:14:15.031"></status>
 </test>
 <doc>Speed test</doc>
-<status status="PASS" endtime="20170904 22:47:38.708" starttime="20170904 22:47:16.755"></status>
-</suite>
-<suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_speedtest_no2.robot" id="s1-s4" name="Selenium Speedtest No2">
-<test id="s1-s4-t1" name="Check the speed of your broadband">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to given URL.</doc>
-<arguments>
-<arg>url=${SERVER}</arg>
-</arguments>
-<msg timestamp="20170904 22:47:38.713" level="INFO">Opening browser 'firefox' to base url 'http://www.fast.com'</msg>
-<kw name="Capture Page Screenshot" library="Selenium2Library">
-<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
-<msg timestamp="20170904 22:47:38.791" level="FAIL">No browser is open</msg>
-<status status="FAIL" endtime="20170904 22:47:38.791" starttime="20170904 22:47:38.789"></status>
-</kw>
-<msg timestamp="20170904 22:47:38.792" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
-<msg timestamp="20170904 22:47:38.792" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
-</msg>
-<status status="FAIL" endtime="20170904 22:47:38.792" starttime="20170904 22:47:38.712"></status>
-</kw>
-<status status="FAIL" endtime="20170904 22:47:38.793" critical="yes" starttime="20170904 22:47:38.712">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
-</status>
-</test>
-<doc>Speed test</doc>
-<status status="FAIL" endtime="20170904 22:47:38.794" starttime="20170904 22:47:38.709"></status>
+<status status="PASS" endtime="20170908 12:14:41.070" starttime="20170908 12:14:14.917"></status>
 </suite>
 <suite source="/home/oviney/robotframework/Sample1/testsuites/selenium_wordpress.robot" id="s1-s5" name="Selenium Wordpress">
 <test id="s1-s5-t1" name="Login to Blog via Web">
@@ -295,26 +400,26 @@
 <arg>None</arg>
 <arg>${HUB_URL}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:38.801" level="INFO">Opening browser 'chrome' to base url 'http://www.viney.ca' through remote server at 'http://192.168.86.83:4444/wd/hub'</msg>
-<status status="PASS" endtime="20170904 22:47:41.517" starttime="20170904 22:47:38.800"></status>
+<msg timestamp="20170908 12:14:15.064" level="INFO">Opening browser 'chrome' to base url 'http://www.viney.ca' through remote server at 'http://192.168.86.88:4444/wd/hub'</msg>
+<status status="PASS" endtime="20170908 12:14:22.171" starttime="20170908 12:14:15.063"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:41.517" starttime="20170904 22:47:38.799"></status>
+<status status="PASS" endtime="20170908 12:14:22.171" starttime="20170908 12:14:15.063"></status>
 </kw>
 <kw name="Set Selenium Speed" library="Selenium2Library">
 <doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
 <arguments>
 <arg>${DELAY}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:41.517" starttime="20170904 22:47:41.517"></status>
+<status status="PASS" endtime="20170908 12:14:22.172" starttime="20170908 12:14:22.171"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>${SELECTOR}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:41.561" starttime="20170904 22:47:41.518"></status>
+<status status="PASS" endtime="20170908 12:14:22.258" starttime="20170908 12:14:22.172"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:41.562" starttime="20170904 22:47:38.799"></status>
+<status status="PASS" endtime="20170908 12:14:22.258" starttime="20170908 12:14:15.061"></status>
 </kw>
 <kw name="When Click on Login Link">
 <kw name="Click Element" library="Selenium2Library">
@@ -322,32 +427,32 @@
 <arguments>
 <arg>${landing_page_login_link_Selector}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:41.562" level="INFO">Clicking element 'css=#meta-2 &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)'.</msg>
-<status status="PASS" endtime="20170904 22:47:42.846" starttime="20170904 22:47:41.562"></status>
+<msg timestamp="20170908 12:14:22.259" level="INFO">Clicking element 'css=#meta-2 &gt; ul:nth-child(2) &gt; li:nth-child(1) &gt; a:nth-child(1)'.</msg>
+<status status="PASS" endtime="20170908 12:14:24.263" starttime="20170908 12:14:22.259"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:42.890" starttime="20170904 22:47:42.846"></status>
+<status status="PASS" endtime="20170908 12:14:24.460" starttime="20170908 12:14:24.263"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom</arg>
 </arguments>
-<msg timestamp="20170904 22:47:42.891" level="INFO">Clicking element 'css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom'.</msg>
-<status status="PASS" endtime="20170904 22:47:43.039" starttime="20170904 22:47:42.890"></status>
+<msg timestamp="20170908 12:14:24.461" level="INFO">Clicking element 'css=#jetpack-sso-wrap &gt; a.jetpack-sso-toggle.wpcom'.</msg>
+<status status="PASS" endtime="20170908 12:14:24.963" starttime="20170908 12:14:24.460"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#user_login</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:43.103" starttime="20170904 22:47:43.040"></status>
+<status status="PASS" endtime="20170908 12:14:25.148" starttime="20170908 12:14:24.963"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:43.103" starttime="20170904 22:47:41.562"></status>
+<status status="PASS" endtime="20170908 12:14:25.148" starttime="20170908 12:14:22.259"></status>
 </kw>
 <kw name="And Input Username">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -355,7 +460,7 @@
 <arguments>
 <arg>css=#user_login</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:43.136" starttime="20170904 22:47:43.104"></status>
+<status status="PASS" endtime="20170908 12:14:25.288" starttime="20170908 12:14:25.149"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -363,10 +468,10 @@
 <arg>id=user_login</arg>
 <arg>${USERNAME}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:43.136" level="INFO">Typing text 'testuser1' into text field 'id=user_login'</msg>
-<status status="PASS" endtime="20170904 22:47:43.386" starttime="20170904 22:47:43.136"></status>
+<msg timestamp="20170908 12:14:25.288" level="INFO">Typing text 'testuser1' into text field 'id=user_login'</msg>
+<status status="PASS" endtime="20170908 12:14:26.060" starttime="20170908 12:14:25.288"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:43.386" starttime="20170904 22:47:43.104"></status>
+<status status="PASS" endtime="20170908 12:14:26.060" starttime="20170908 12:14:25.148"></status>
 </kw>
 <kw name="And Input Password">
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
@@ -374,7 +479,7 @@
 <arguments>
 <arg>css=#user_pass</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:43.427" starttime="20170904 22:47:43.387"></status>
+<status status="PASS" endtime="20170908 12:14:26.306" starttime="20170908 12:14:26.061"></status>
 </kw>
 <kw name="Input Text" library="Selenium2Library">
 <doc>Types the given `text` into text field identified by `locator`.</doc>
@@ -382,10 +487,10 @@
 <arg>id=user_pass</arg>
 <arg>${PASSWORD}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:43.427" level="INFO">Typing text 'H6ZZsfwVT41M9Q8$6NcaMi4i' into text field 'id=user_pass'</msg>
-<status status="PASS" endtime="20170904 22:47:43.700" starttime="20170904 22:47:43.427"></status>
+<msg timestamp="20170908 12:14:26.307" level="INFO">Typing text 'H6ZZsfwVT41M9Q8$6NcaMi4i' into text field 'id=user_pass'</msg>
+<status status="PASS" endtime="20170908 12:14:27.304" starttime="20170908 12:14:26.306"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:43.701" starttime="20170904 22:47:43.386"></status>
+<status status="PASS" endtime="20170908 12:14:27.305" starttime="20170908 12:14:26.061"></status>
 </kw>
 <kw name="Then Submit Login Form">
 <arguments>
@@ -396,43 +501,43 @@
 <arguments>
 <arg>css=#wp-submit</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:43.741" starttime="20170904 22:47:43.701"></status>
+<status status="PASS" endtime="20170908 12:14:27.526" starttime="20170908 12:14:27.305"></status>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
 <doc>Click element identified by `locator`.</doc>
 <arguments>
 <arg>id=wp-submit</arg>
 </arguments>
-<msg timestamp="20170904 22:47:43.742" level="INFO">Clicking element 'id=wp-submit'.</msg>
-<status status="PASS" endtime="20170904 22:47:47.150" starttime="20170904 22:47:43.742"></status>
+<msg timestamp="20170908 12:14:27.527" level="INFO">Clicking element 'id=wp-submit'.</msg>
+<status status="PASS" endtime="20170908 12:14:31.636" starttime="20170908 12:14:27.526"></status>
 </kw>
 <kw name="Wait Until Page Contains Element" library="Selenium2Library">
 <doc>Waits until element specified with `locator` appears on current page.</doc>
 <arguments>
 <arg>css=#wp-admin-bar-my-account &gt; a &gt; span</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:47.229" starttime="20170904 22:47:47.150"></status>
+<status status="PASS" endtime="20170908 12:14:31.764" starttime="20170908 12:14:31.637"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="Selenium2Library">
 <doc>Waits until `text` appears on current page.</doc>
 <arguments>
 <arg>${verify_page_text}</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:47.273" starttime="20170904 22:47:47.229"></status>
+<status status="PASS" endtime="20170908 12:14:31.837" starttime="20170908 12:14:31.764"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:47.273" starttime="20170904 22:47:43.701"></status>
+<status status="PASS" endtime="20170908 12:14:31.838" starttime="20170908 12:14:27.305"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="Selenium2Library">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20170904 22:47:47.363" starttime="20170904 22:47:47.274"></status>
+<status status="PASS" endtime="20170908 12:14:31.940" starttime="20170908 12:14:31.838"></status>
 </kw>
 <tags>
 <tag>Smoke</tag>
 </tags>
-<status status="PASS" endtime="20170904 22:47:47.363" critical="yes" starttime="20170904 22:47:38.798"></status>
+<status status="PASS" endtime="20170908 12:14:31.940" critical="yes" starttime="20170908 12:14:15.060"></status>
 </test>
 <doc>This suite tests my blog for basic functionality.</doc>
-<status status="PASS" endtime="20170904 22:47:47.364" starttime="20170904 22:47:38.795"></status>
+<status status="PASS" endtime="20170908 12:14:31.941" starttime="20170908 12:14:14.940"></status>
 </suite>
 <suite source="/home/oviney/robotframework/Sample1/testsuites/soap.robot" id="s1-s6" name="Soap">
 <test id="s1-s6-t1" name="SOAP Webservice Operation">
@@ -442,7 +547,7 @@
 <arguments>
 <arg>${SOAP_WSDL_URL}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:47.392" level="INFO">Using WSDL at http://www.webservicex.net/Statistics.asmx?WSDL
+<msg timestamp="20170908 12:14:15.048" level="INFO">Using WSDL at http://www.webservicex.net/Statistics.asmx?WSDL
 Suds ( https://fedorahosted.org/suds/ )  version: 0.4 GA  build: R699-20100913
 
 Service ( Statistics ) tns="http://www.webserviceX.NET"
@@ -461,7 +566,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
             ArrayOfDouble
 
 </msg>
-<status status="PASS" endtime="20170904 22:47:47.392" starttime="20170904 22:47:47.388"></status>
+<status status="PASS" endtime="20170908 12:14:15.049" starttime="20170908 12:14:15.041"></status>
 </kw>
 <kw name="Create Wsdl Object" library="SudsLibrary">
 <doc>Creates a WSDL object of the specified `type`.</doc>
@@ -471,10 +576,10 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${dbl array}</var>
 </assign>
-<msg timestamp="20170904 22:47:47.393" level="INFO">${dbl array} = (ArrayOfDouble){
+<msg timestamp="20170908 12:14:15.049" level="INFO">${dbl array} = (ArrayOfDouble){
    double[] = &lt;empty&gt;
  }</msg>
-<status status="PASS" endtime="20170904 22:47:47.393" starttime="20170904 22:47:47.393"></status>
+<status status="PASS" endtime="20170908 12:14:15.050" starttime="20170908 12:14:15.049"></status>
 </kw>
 <kw name="Append To List" library="Collections">
 <doc>Adds ``values`` to the end of ``list``.</doc>
@@ -482,7 +587,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${dbl array.double}</arg>
 <arg>2.0</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:47.393" starttime="20170904 22:47:47.393"></status>
+<status status="PASS" endtime="20170908 12:14:15.050" starttime="20170908 12:14:15.050"></status>
 </kw>
 <kw name="Append To List" library="Collections">
 <doc>Adds ``values`` to the end of ``list``.</doc>
@@ -490,7 +595,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${dbl array.double}</arg>
 <arg>3.0</arg>
 </arguments>
-<status status="PASS" endtime="20170904 22:47:47.394" starttime="20170904 22:47:47.394"></status>
+<status status="PASS" endtime="20170908 12:14:15.050" starttime="20170908 12:14:15.050"></status>
 </kw>
 <kw name="Call Soap Method" library="SudsLibrary">
 <doc>Calls the SOAP method with the given `name` and `args`.</doc>
@@ -501,7 +606,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${result}</var>
 </assign>
-<msg timestamp="20170904 22:47:47.396" level="INFO">Sending:
+<msg timestamp="20170908 12:14:15.054" level="INFO">Sending:
 &lt;?xml version="1.0" ?&gt;
 &lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns0="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://www.webserviceX.NET" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;SOAP-ENV:Header/&gt;
@@ -515,7 +620,7 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
   &lt;/ns0:Body&gt;
 &lt;/SOAP-ENV:Envelope&gt;
 </msg>
-<msg timestamp="20170904 22:47:47.810" level="INFO">Received:
+<msg timestamp="20170908 12:14:15.562" level="INFO">Received:
 &lt;?xml version="1.0" ?&gt;
 &lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;soap:Body&gt;
@@ -529,14 +634,14 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
   &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </msg>
-<msg timestamp="20170904 22:47:47.812" level="INFO">${result} = (reply){
+<msg timestamp="20170908 12:14:15.564" level="INFO">${result} = (reply){
    Sums = 5.0
    Average = 2.5
    StandardDeviation = 0.5
    skewness = 0.5
    Kurtosis = -2.5
  }</msg>
-<status status="PASS" endtime="20170904 22:47:47.813" starttime="20170904 22:47:47.394"></status>
+<status status="PASS" endtime="20170908 12:14:15.564" starttime="20170908 12:14:15.051"></status>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
@@ -544,14 +649,14 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${result.Average}</arg>
 <arg>2.5</arg>
 </arguments>
-<msg timestamp="20170904 22:47:47.813" level="INFO">Argument types are:
+<msg timestamp="20170908 12:14:15.565" level="INFO">Argument types are:
 &lt;type 'float'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 22:47:47.813" starttime="20170904 22:47:47.813"></status>
+<status status="PASS" endtime="20170908 12:14:15.565" starttime="20170908 12:14:15.564"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:47.814" starttime="20170904 22:47:47.388"></status>
+<status status="PASS" endtime="20170908 12:14:15.565" starttime="20170908 12:14:15.041"></status>
 </kw>
-<status status="PASS" endtime="20170904 22:47:47.814" critical="yes" starttime="20170904 22:47:47.387"></status>
+<status status="PASS" endtime="20170908 12:14:15.565" critical="yes" starttime="20170908 12:14:15.040"></status>
 </test>
 <test id="s1-s6-t2" name="REST Service Operation">
 <kw name="Create Session" library="RequestsLibrary">
@@ -560,8 +665,8 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>test</arg>
 <arg>${REST_API_URL}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:47.815" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" endtime="20170904 22:47:47.816" starttime="20170904 22:47:47.815"></status>
+<msg timestamp="20170908 12:14:15.566" level="INFO">Creating Session using : alias=test, url=http://jsonplaceholder.typicode.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20170908 12:14:15.567" starttime="20170908 12:14:15.566"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the</doc>
@@ -572,17 +677,17 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20170904 22:47:48.068" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
-<msg timestamp="20170904 22:47:48.068" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" endtime="20170904 22:47:48.068" starttime="20170904 22:47:47.816"></status>
+<msg timestamp="20170908 12:14:15.939" level="INFO">Get Request using : alias=test, uri=/posts/1, headers=None json=None</msg>
+<msg timestamp="20170908 12:14:15.939" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20170908 12:14:15.940" starttime="20170908 12:14:15.567"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:48.069" level="INFO">200</msg>
-<status status="PASS" endtime="20170904 22:47:48.069" starttime="20170904 22:47:48.069"></status>
+<msg timestamp="20170908 12:14:15.940" level="INFO">200</msg>
+<status status="PASS" endtime="20170908 12:14:15.940" starttime="20170908 12:14:15.940"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -590,31 +695,31 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20170904 22:47:48.069" level="INFO">Argument types are:
+<msg timestamp="20170908 12:14:15.941" level="INFO">Argument types are:
 &lt;type 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" endtime="20170904 22:47:48.069" starttime="20170904 22:47:48.069"></status>
+<status status="PASS" endtime="20170908 12:14:15.941" starttime="20170908 12:14:15.940"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.text}</arg>
 </arguments>
-<msg timestamp="20170904 22:47:48.070" level="INFO">{
+<msg timestamp="20170908 12:14:15.941" level="INFO">{
   "userId": 1,
   "id": 1,
   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
   "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
 }</msg>
-<status status="PASS" endtime="20170904 22:47:48.070" starttime="20170904 22:47:48.070"></status>
+<status status="PASS" endtime="20170908 12:14:15.941" starttime="20170908 12:14:15.941"></status>
 </kw>
 <doc>Get the response from API</doc>
-<status status="PASS" endtime="20170904 22:47:48.070" critical="yes" starttime="20170904 22:47:47.814"></status>
+<status status="PASS" endtime="20170908 12:14:15.942" critical="yes" starttime="20170908 12:14:15.566"></status>
 </test>
 <doc>This suite tests my blog for basic functionality.</doc>
-<status status="PASS" endtime="20170904 22:47:48.071" starttime="20170904 22:47:47.365"></status>
+<status status="PASS" endtime="20170908 12:14:15.942" starttime="20170908 12:14:14.900"></status>
 </suite>
-<status status="FAIL" endtime="20170904 22:47:48.073" starttime="20170904 22:47:10.506"></status>
+<status status="FAIL" endtime="20170908 12:14:15.335" starttime="20170908 12:14:14.704"></status>
 </suite>
 <statistics>
 <total>
@@ -625,16 +730,15 @@ Service ( Statistics ) tns="http://www.webserviceX.NET"
 <stat fail="0" pass="2">Smoke</stat>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Testsuites" pass="6">Testsuites</stat>
-<stat fail="0" id="s1-s1" name="Rest" pass="1">Testsuites.Rest</stat>
-<stat fail="0" id="s1-s2" name="Selenium Basic" pass="1">Testsuites.Selenium Basic</stat>
-<stat fail="0" id="s1-s3" name="Selenium Speedtest" pass="1">Testsuites.Selenium Speedtest</stat>
-<stat fail="1" id="s1-s4" name="Selenium Speedtest No2" pass="0">Testsuites.Selenium Speedtest No2</stat>
-<stat fail="0" id="s1-s5" name="Selenium Wordpress" pass="1">Testsuites.Selenium Wordpress</stat>
-<stat fail="0" id="s1-s6" name="Soap" pass="2">Testsuites.Soap</stat>
+<stat fail="1" id="s1" name="Suites" pass="6">Suites</stat>
+<stat fail="0" id="s1-s1" name="Rest" pass="1">Suites.Rest</stat>
+<stat fail="0" id="s1-s2" name="Selenium Basic" pass="1">Suites.Selenium Basic</stat>
+<stat fail="1" id="s1-s3" name="Selenium Speedtest No2" pass="0">Suites.Selenium Speedtest No2</stat>
+<stat fail="0" id="s1-s4" name="Selenium Speedtest" pass="1">Suites.Selenium Speedtest</stat>
+<stat fail="0" id="s1-s5" name="Selenium Wordpress" pass="1">Suites.Selenium Wordpress</stat>
+<stat fail="0" id="s1-s6" name="Soap" pass="2">Suites.Soap</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20170904 22:47:38.792" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No browser is open</msg>
 </errors>
 </robot>
