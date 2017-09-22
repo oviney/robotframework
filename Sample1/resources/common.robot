@@ -1,8 +1,3 @@
-*** Settings ***
-Library     String
-Metadata    Log of First Run    [./output/first_run_log.html|./output/first_run_log.html]
-Metadata    Log of Second Run   [./output/second_run_log.html|./output/second_run_log.html]
-
 *** Variables ***
 ${BROWSER}              chrome
 ${DELAY}                0

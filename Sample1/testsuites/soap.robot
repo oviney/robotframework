@@ -6,6 +6,8 @@ Library     SudsLibrary
 Library     BuiltIn
 Library     Collections
 Library     RequestsLibrary
+Metadata    Log of First Run        [first_run_log.html|first_run_log.html]
+Metadata    Log of Second Run       [second_run_log.html|second_run_log.html]
 
 *** Variables ***
 ${SOAP_WSDL_URL}        http://www.webservicex.net/Statistics.asmx?WSDL
