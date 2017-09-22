@@ -1,7 +1,7 @@
 *** Settings ***
 Library     String
-Metadata    Log of First Run    [first_run_log.html|first_run_log.html]
-Metadata    Log of Second Run   [second_run_log.html|second_run_log.html]
+Metadata    Log of First Run    [./output/first_run_log.html|./output/first_run_log.html]
+Metadata    Log of Second Run   [./output/second_run_log.html|./output/second_run_log.html]
 
 *** Variables ***
 ${BROWSER}              chrome
