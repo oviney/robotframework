@@ -1,4 +1,5 @@
 *** Settings ***
+Library  String
 Resource  ../resources/common.robot
 
 *** Test Cases ***
