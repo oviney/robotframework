@@ -11,16 +11,9 @@ pipeline {
         build 'SampleBuildJob'
       }
     }
-    stage('Test') {
-      parallel {
-        stage('Test') {
-          steps {
-            build 'RobotFramework_Sample_3_Project'
-          }
-        }
-        stage('Test #2') {
-          steps {
-            sh '''# send display to Xvfb (X Windows video frame buffer - lightweight X Windows)
+    stage('Test #2') {
+      steps {
+        sh '''# send display to Xvfb (X Windows video frame buffer - lightweight X Windows)
 export DISPLAY=:0
 # mkdir -p results
 # pybot -d results Sample1/testsuites/
@@ -28,8 +21,6 @@ export DISPLAY=:0
 chmod +x ./Sample1/scripts/launch_test_and_rerun.sh 
 ./Sample1/scripts/launch_test_and_rerun.sh ./Sample1/testsuites/
 echo "exit status was: " $? # echo exit status'''
-          }
-        }
       }
     }
     stage('Deploy') {
