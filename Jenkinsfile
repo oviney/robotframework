@@ -18,7 +18,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'echo "Deployment was successful"'
+        build 'SampleDeployJob'
       }
     }
   }
