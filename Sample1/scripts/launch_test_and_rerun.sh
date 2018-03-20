@@ -11,7 +11,7 @@ echo "#######################################"
 echo "# Running portfolio a first time      #"
 echo "#######################################"
 echo
-pybot --outputdir results $@
+pabot --outputdir results $@
 
 # we stop the script here if all the tests were OK
 if [ $? -eq 0 ]; then
@@ -29,7 +29,7 @@ echo "#######################################"
 echo "# Running again the tests that failed #"
 echo "#######################################"
 echo
-pybot --outputdir results --nostatusrc --rerunfailed results/output.xml --output rerun.xml $@
+pabot --outputdir results --nostatusrc --rerunfailed results/output.xml --output rerun.xml $@
 # => Robot Framework generates file rerun.xml
 
 # we keep a copy of the second log file
