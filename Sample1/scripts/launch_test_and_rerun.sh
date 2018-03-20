@@ -11,7 +11,7 @@ echo "#######################################"
 echo "# Running portfolio a first time      #"
 echo "#######################################"
 echo
-pabot --outputdir results $@
+pabot --processes 5 --outputdir results $@
 
 # we stop the script here if all the tests were OK
 if [ $? -eq 0 ]; then
