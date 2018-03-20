@@ -11,10 +11,12 @@ ${PASSWORD}             H6ZZsfwVT41M9Q8$6NcaMi4i
 
 # css selectors
 ${landing_page_login_link_Selector}     css=#meta-2 > ul:nth-child(2) > li:nth-child(1) > a:nth-child(1)
+${landing_page_login_link_Selector}     css=#meta-2 > ul > li:nth-child(1) > a
 ${landing_page_verification_Selector}   css=#tsf > div.tsf-p > div.jsb > center > input[type="submit"]:nth-child(1)
 
 *** Keywords ***
 Click on Login Link
+
     click element  ${landing_page_login_link_Selector}
     wait until page contains element  css=#jetpack-sso-wrap > a.jetpack-sso-toggle.wpcom
     click element  css=#jetpack-sso-wrap > a.jetpack-sso-toggle.wpcom
