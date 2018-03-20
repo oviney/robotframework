@@ -15,4 +15,4 @@ Open Browser to Landing Page
     [Arguments]  ${SERVER}  ${BROWSER}  ${SELECTOR}
     Start Browser   ${SERVER}   ${BROWSER}
     set selenium speed  ${DELAY}
-    wait until page contains element    ${SELECTOR}
+    wait until page contains element    ${SELECTOR}     30
