@@ -1,7 +1,7 @@
 *** Variables ***
 ${BROWSER}              chrome
 ${DELAY}                0
-${HUB_URL}              http://192.168.86.88:4444/wd/hub
+${HUB_URL}              http://192.168.86.129:4444/wd/hub
 
 
 *** Keywords ***

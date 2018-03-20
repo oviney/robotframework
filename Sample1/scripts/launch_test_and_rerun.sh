@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
 # clean previous output files
-rm -f output/output.xml
-rm -f output/rerun.xml
-rm -f output/first_run_log.html
-rm -f output/second_run_log.html
+rm -f results/output.xml
+rm -f results/rerun.xml
+rm -f results/first_run_log.html
+rm -f results/second_run_log.html
 
 echo
 echo "#######################################"
 echo "# Running portfolio a first time      #"
 echo "#######################################"
 echo
-pybot --outputdir output $@
+pybot --outputdir results $@
 
 # we stop the script here if all the tests were OK
 if [ $? -eq 0 ]; then
@@ -21,7 +21,7 @@ fi
 # otherwise we go for another round with the failing tests
 
 # we keep a copy of the first log file
-cp output/log.html  output/first_run_log.html
+cp results/log.html  results/first_run_log.html
 
 # we launch the tests that failed
 echo
@@ -29,11 +29,11 @@ echo "#######################################"
 echo "# Running again the tests that failed #"
 echo "#######################################"
 echo
-pybot --outputdir output --nostatusrc --rerunfailed output/output.xml --output rerun.xml $@
+pybot --outputdir results --nostatusrc --rerunfailed results/output.xml --output rerun.xml $@
 # => Robot Framework generates file rerun.xml
 
 # we keep a copy of the second log file
-cp output/log.html  output/second_run_log.html
+cp results/log.html  results/second_run_log.html
 
 # Merging output files
 echo
@@ -41,5 +41,5 @@ echo "########################"
 echo "# Merging output files #"
 echo "########################"
 echo
-rebot --nostatusrc --outputdir output --output output.xml --merge output/output.xml  output/rerun.xml
+rebot --nostatusrc --outputdir results --output output.xml --merge results/output.xml  results/rerun.xml
 # => Robot Framework generates a new output.xml

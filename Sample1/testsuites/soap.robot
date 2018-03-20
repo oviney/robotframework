@@ -16,6 +16,8 @@ ${REST_API_URL}         http://jsonplaceholder.typicode.com
 *** Keywords ***
 Call Web Service with Operation
     Create Soap Client  ${SOAP_WSDL_URL}
+#    Set Proxies     http    http://localhost:8888
+
     ${dbl array}=	Create Wsdl Object	ArrayOfDouble
     Append To List	${dbl array.double}	2.0
     Append To List	${dbl array.double}	3.0
